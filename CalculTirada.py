@@ -9,6 +9,10 @@
 3. El resultado a operar sera ofrecido por el usuario, se debe invalidad cualquier
    dato dado por el usuario que ses salga fuera del rango.
 
+    3.1. Para evitar la entrada de numeros que no puedan ser manejados por los dados,
+         "int", se utiliza el metodo isdigit() que itera sobre toos los caracteres
+         de la varible dada confirmando que estos sean "int", lo que termina evitando
+         la entrada de floats o str's.
 
 4. Para calcular su porcentaje de probabilidad se debe realizar la siguiente 
    operacion: [Suma de la cantidad de posibles resultados que den X o inferior]
@@ -43,11 +47,17 @@ def Calculo100(numero):
 
 def Programa():
     while True:
-        num = int(input("Porfavor introduce el numero (2 - 12): "))
+        enter = input("Por favor introduce el numero (2 - 12): ")
+        
+        if not enter.isdigit():
+            print("Por favor introduzca un número válido.")
+            continue 
+        num = int(enter)
         if num < 2 or num > 12:
-            print("Por favor agregue un numero valido")
+            print("Por favor introduzca un número válido.")
         else:
             porcent = Calculo100(num)
             print("La probabilidad es de: ", porcent, "%")
+
 
 Programa()
