@@ -13,7 +13,33 @@
 4. Para calcular su porcentaje de probabilidad se debe realizar la siguiente 
    operacion: [Suma de la cantidad de posibles resultados que den X o inferior]
    * 100 / 36 
+   
+    4.1. Para lograr hacer la suma de posibilidad se debera iterar sobre los
+         dados, pasando por todas las posibilidades que den como resultado X
 
 5. Se debe mostrar por pantalla el porcentaje de probabilidad del numero.
 
 """
+
+dado1 = [1, 2, 3, 4, 5, 6]
+dado2 = [1, 2, 3, 4, 5, 6]
+
+def Calculo100():
+    casos = 0
+    num = int(input("Agregue el numero resultado: "))
+    for i in dado1:
+        for j in dado2:
+            resultado = (i + j)
+            if resultado <= num:
+                casos += 1
+            else:
+                break
+    print(casos)
+
+
+
+"""
+def Programa():
+"""
+
+Calculo100()
