@@ -24,22 +24,30 @@
 dado1 = [1, 2, 3, 4, 5, 6]
 dado2 = [1, 2, 3, 4, 5, 6]
 
-def Calculo100():
+def Calculo100(numero):
     casos = 0
-    num = int(input("Agregue el numero resultado: "))
     for i in dado1:
         for j in dado2:
             resultado = (i + j)
-            if resultado <= num:
+            
+            if resultado <= numero:
                 casos += 1
             else:
                 break
-    print(casos)
+    resultado = (casos * 100 / 36)
+    porcent = round(resultado, 1)
+    return(porcent)
 
 
 
-"""
+
 def Programa():
-"""
+    while True:
+        num = int(input("Porfavor introduce el numero (2 - 12): "))
+        if num < 2 or num > 12:
+            print("Por favor agregue un numero valido")
+        else:
+            porcent = Calculo100(num)
+            print("La probabilidad es de: ", porcent, "%")
 
-Calculo100()
+Programa()
