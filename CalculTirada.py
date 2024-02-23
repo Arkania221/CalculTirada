@@ -36,8 +36,7 @@ def Calculo100(numero):
             
             if resultado <= numero:
                 casos += 1
-            else:
-                break
+
     resultado = (casos * 100 / 36)
     porcent = round(resultado, 1)
     return(porcent)
